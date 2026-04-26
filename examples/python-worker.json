@@ -1,0 +1,16 @@
+{
+  "name": "python-worker",
+  "description": "Background queue worker (Python)",
+  "exec_start": "/opt/python-worker/.venv/bin/python -m worker.main",
+  "user": "worker",
+  "group": "worker",
+  "working_directory": "/opt/python-worker",
+  "environment_file": "/etc/python-worker/env",
+  "restart": "always",
+  "restart_sec": 10,
+  "memory_max": "512M",
+  "tasks_max": 200,
+  "read_write_paths": ["/var/log/python-worker"],
+  "after": ["network-online.target", "redis.service"],
+  "wants": ["network-online.target"]
+}
