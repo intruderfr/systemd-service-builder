@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "systemd-service-builder"
+version = "0.1.0"
+description = "Generate hardened, production-ready systemd .service unit files."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.8"
+authors = [
+    { name = "Aslam Ahamed" }
+]
+keywords = [
+    "systemd", "service", "linux", "infrastructure",
+    "operations", "hardening", "devops", "sysadmin"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: System :: Boot",
+    "Topic :: System :: Systems Administration",
+]
+
+[project.scripts]
+systemd-service-builder = "systemd_service_builder:main"
+
+[project.urls]
+Homepage = "https://github.com/intruderfr/systemd-service-builder"
+Issues = "https://github.com/intruderfr/systemd-service-builder/issues"
+
+[tool.setuptools]
+py-modules = ["systemd_service_builder"]
